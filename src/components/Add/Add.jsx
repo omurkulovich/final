@@ -1,7 +1,7 @@
 import React, { useContext, useState } from "react";
 import { Form, Input, Button, Modal, message } from "antd";
 import "./Add.css";
-import { rolexContext } from "../../context/rolexContext";
+import { contextsMovie } from "../../context/contextsMovie";
 const layout = {
   labelCol: {
     span: 8,
@@ -23,7 +23,7 @@ const validateMessages = {
 };
 
 const Add = () => {
-  const { handleAddWatch } = useContext(rolexContext);
+  const { handleAddWatch } = useContext(contextsMovie);
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
   const [year, setYear] = useState("");
@@ -37,7 +37,7 @@ const Add = () => {
   };
 
   function addWatch() {
-    if (!image1 || !type || !name || !description || !year || !vodeo) {
+    if (!image1 || !type || !name || !description || !year || !video) {
       return setTimeout(() => {
         message.error("Fill in all the fields!");
       }, 500);
@@ -81,7 +81,7 @@ const Add = () => {
         Add Watch
       </Button>
       <Modal
-        title="Add new watch"
+        title="new movie"
         visible={isModalVisible}
         onOk={addWatch}
         onCancel={handleCancel}
