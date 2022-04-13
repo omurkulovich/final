@@ -1,10 +1,13 @@
 import "./App.css";
+import MovieContextProvider from "./context/contextsMovie";
 import Routing from "./Routing";
 
 function App() {
   return (
     <>
-      <Routing />
+      <MovieContextProvider>
+        <Routing />
+      </MovieContextProvider>
     </>
   );
 }
