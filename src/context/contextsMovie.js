@@ -6,7 +6,7 @@ import { MOVIES_API } from "../helpers/const";
 export const contextsMovie = React.createContext();
 
 const INIT_STATE = {
-  movie: [],
+  movies: [],
   oneMovie: null,
 };
 
@@ -15,7 +15,7 @@ const reducer = (state = INIT_STATE, action) => {
     case CASE_GET_MOVIE:
       return {
         ...state,
-        movie: action.payload.data,
+        movies: action.payload.data,
       };
     case CASE_GET_ONE_MOVIE:
       return {
@@ -50,7 +50,7 @@ const MovieContextProvider = ({ children }) => {
   return (
     <contextsMovie.Provider
       value={{
-        movie: state.movie,
+        movies: state.movies,
         oneMOvie: state.oneMovie,
         getMovie,
         getOneMovie,
