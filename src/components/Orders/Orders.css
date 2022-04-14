@@ -25,6 +25,7 @@
   box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
   padding: 20px;
   width: 600px;
+  margin-top: 50px;
 }
 
 .coniatner-main .order-form .bills {
@@ -46,6 +47,9 @@
   text-transform: uppercase;
 }
 
+.coniatner-main .order-form .bills p {
+  margin-left: 10px;
+}
 .coniatner-main h2 {
   text-align: center;
   margin: o auto;

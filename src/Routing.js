@@ -9,8 +9,8 @@ const Routing = () => {
     <div>
       <BrowserRouter>
         <Header />
-        <Orders />
-        <Footer />
+        {/* <Orders /> */}
+        {/* <Footer /> */}
       </BrowserRouter>
     </div>
   );
