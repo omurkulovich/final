@@ -39,6 +39,11 @@ const MovieContextProvider = ({ children }) => {
     });
   }
 
+  async function handleAddWatch(newMovie) {
+    await axios.post(MOVIES_API, newMovie);
+    getMovie();
+  }
+
   async function getOneMovie(id) {
     let result = await axios(`${MOVIES_API}/${id}`);
     dispatch({
@@ -54,6 +59,7 @@ const MovieContextProvider = ({ children }) => {
         oneMOvie: state.oneMovie,
         getMovie,
         getOneMovie,
+        handleAddWatch,
       }}
     >
       {children}

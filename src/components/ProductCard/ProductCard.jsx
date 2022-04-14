@@ -1,31 +1,8 @@
-import { Card, Carousel } from "antd";
-import React from "react";
+import { ShoppingOutlined } from "@ant-design/icons";
+import { Card } from "antd";
+import React, { useContext, useState } from "react";
+import { cartContext } from "../../context/cartContext";
 const { Meta } = Card;
-
-// const ProductCard = ({ item }) => {
-//   return (
-//     <Card>
-//       <div className="products-ch">
-//         <div className="img-ch">
-//           <img className="img-prod" src={item.image1} />
-//         </div>
-//         <Meta
-//           style={{ textAlign: "center", color: "rgb(221, 212, 212);" }}
-//           title={
-//             <>
-//               <h4>{item.name}</h4>
-//             </>
-//           }
-//           description={
-//             <>
-//               <h3>{"$" + item.price}</h3>
-//             </>
-//           }
-//         />
-//       </div>
-//     </Card>
-//   );
-// };
 
 const contentStyle = {
   width: "100%",
@@ -36,6 +13,8 @@ const contentStyle = {
 };
 
 const ProductCard = ({ item }) => {
+  const { addProductToCart, checkItemInCart } = useContext(cartContext);
+  const [checkItem, setCheckItem] = useState(checkItemInCart(item.id));
   return (
     <Card
       hoverable
@@ -58,6 +37,17 @@ const ProductCard = ({ item }) => {
             <h3>{"$" + item.price}</h3>
           </>
         }
+      />
+      <ShoppingOutlined
+        onClick={() => {
+          addProductToCart(item);
+          setCheckItem(checkItemInCart(item.id));
+        }}
+        style={{
+          margin: "10px",
+          fontSize: "25px",
+          color: checkItem ? "red" : "black",
+        }}
       />
     </Card>
   );

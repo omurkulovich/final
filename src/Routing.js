@@ -1,9 +1,12 @@
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Action from "./components/Action/Action";
+import Add from "./components/Add/Add";
+import AddList from "./components/AddList/AddList";
 import Comedy from "./components/Comedy/Comedy";
 import Fantasy from "./components/Fantasy/Fantasy";
 import Header from "./components/Header/Header";
+import HomePage from "./components/HomePage/HomePage";
 import MainPage from "./components/MainPage/MainPage";
 
 const Routing = () => {
@@ -27,12 +30,21 @@ const Routing = () => {
       link: "/action",
       element: <Action />,
     },
+    {
+      link: "/add",
+      element: <Add />,
+    },
+    {
+      link: "/addcard",
+      element: <AddList />,
+    },
   ];
 
   return (
     <div>
       <BrowserRouter>
         <Header />
+        <HomePage />
         <Routes>
           {PUBLIC_ROUTES.map((item) => (
             <Route key={item.id} path={item.link} element={item.element} />
