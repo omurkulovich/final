@@ -1,5 +1,9 @@
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+
+import Footer from "./components/Footer/Footer";
+import Header from "./components/Header/Header";
+import Orders from "./components/Orders/Orders";
 import Action from "./components/Action/Action";
 import Add from "./components/Add/Add";
 import AddList from "./components/AddList/AddList";
@@ -8,6 +12,7 @@ import Fantasy from "./components/Fantasy/Fantasy";
 import Header from "./components/Header/Header";
 import HomePage from "./components/HomePage/HomePage";
 import MainPage from "./components/MainPage/MainPage";
+
 
 const Routing = () => {
   let PUBLIC_ROUTES = [
@@ -44,12 +49,16 @@ const Routing = () => {
     <div>
       <BrowserRouter>
         <Header />
+
+       
+
         <HomePage />
         <Routes>
           {PUBLIC_ROUTES.map((item) => (
             <Route key={item.id} path={item.link} element={item.element} />
           ))}
         </Routes>
+
       </BrowserRouter>
     </div>
   );
