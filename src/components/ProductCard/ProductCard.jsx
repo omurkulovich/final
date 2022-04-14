@@ -39,6 +39,7 @@ const ProductCard = ({ item }) => {
           display: "grid",
           gridTemplateColumns: "repeat(auto-fit, minmax(250px, 1fr))",
           gridColumnGap: "1rem",
+          marginBottom: "5px",
           // gridRowGap: "2rem",
         }}
         cover={
