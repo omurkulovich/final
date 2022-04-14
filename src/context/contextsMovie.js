@@ -52,14 +52,25 @@ const MovieContextProvider = ({ children }) => {
     });
   }
 
+  async function upDataMovie(id, editedmovie) {
+    await axios.patch(`${MOVIES_API}/${id}`, editedmovie);
+    getMovie();
+  }
+
+  async function deleteMovie(id) {
+    await axios.delete(`${MOVIES_API}/${id}`);
+    getMovie();
+  }
   return (
     <contextsMovie.Provider
       value={{
         movies: state.movies,
-        oneMOvie: state.oneMovie,
+        oneMovie: state.oneMovie,
         getMovie,
         getOneMovie,
+        upDataMovie,
         handleAddWatch,
+        deleteMovie,
       }}
     >
       {children}

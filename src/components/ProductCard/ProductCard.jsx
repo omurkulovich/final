@@ -1,16 +1,23 @@
 import { ShoppingOutlined, HeartOutlined } from "@ant-design/icons";
-import { Card } from "antd";
+
 import React, { useContext, useState } from "react";
 import { cartContext } from "../../context/cartContext";
 import { favoritesContext } from "../../context/favoritesContext";
+import { Card } from "antd";
+
+import { Link } from "react-router-dom";
+import { contextsMovie } from "../../context/contextsMovie";
+import "./ProductCard.css";
 const { Meta } = Card;
 
 const contentStyle = {
   width: "100%",
   // height: "540px",
+  // height: "100%",
   color: "#fff",
   textAlign: "center",
   background: "#364d79",
+  borderRadius: "5%",
 };
 
 const ProductCard = ({ item }) => {
@@ -19,27 +26,25 @@ const ProductCard = ({ item }) => {
   const { addProductToFavorite, checkItemInFavorite } =
     useContext(favoritesContext);
   const [checkItem2, setCheckItem2] = useState(checkItemInFavorite(item.id));
+  const { deleteMovie } = useContext(contextsMovie);
   return (
-    <Card
-      hoverable
-      style={{ width: "20vw", margin: "5px ", border: "none" }}
-      cover={
-        <div className="img-ch">
-          <img style={contentStyle} src={item.image1} />
-        </div>
-      }
-    >
-      <Meta
-        style={{ textAlign: "center", color: "rgb(221, 212, 212);" }}
-        title={
-          <>
-            <h4>{item.name}</h4>
-          </>
-        }
-        description={
-          <>
-            <h3>{"$" + item.price}</h3>
-          </>
+    <div className="card-tt">
+      <Card
+        hoverable
+        style={{
+          width: "20vw",
+          margin: "5px ",
+          borderRadius: "1rem",
+          background: "black",
+          display: "grid",
+          gridTemplateColumns: "repeat(auto-fit, minmax(250px, 1fr))",
+          gridColumnGap: "1rem",
+          // gridRowGap: "2rem",
+        }}
+        cover={
+          <div className="img-ch" style={{ borderRadius: "10%" }}>
+            <img className="img-ch" style={contentStyle} src={item.image1} />
+          </div>
         }
       />
       <HeartOutlined
@@ -50,7 +55,7 @@ const ProductCard = ({ item }) => {
         style={{
           margin: "10px",
           fontSize: "25px",
-          color: checkItem2 ? "black" : "grey",
+          color: checkItem2 ? "white" : "grey",
         }}
       />
       <ShoppingOutlined
@@ -61,10 +66,17 @@ const ProductCard = ({ item }) => {
         style={{
           margin: "10px",
           fontSize: "25px",
-          color: checkItem ? "black" : "grey",
+          color: checkItem ? "white" : "grey",
         }}
       />
-    </Card>
+      <div className="desc-t">
+        <Link to={`/edit/${item.id}`}>
+          <button>Edit</button>
+        </Link>
+        <button onClick={() => deleteMovie(item.id)}>Delete</button>
+      </div>
+      <Card />
+    </div>
   );
 };
 

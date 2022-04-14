@@ -1,16 +1,17 @@
 import React, { useState } from "react";
 import {
-  IoMdBookmark,
-  IoMdCall,
   IoMdChatboxes,
-  IoMdClipboard,
   IoMdClose,
-  IoMdHammer,
   IoMdHome,
   IoMdImage,
   IoMdMenu,
   IoMdPerson,
+  IoMdCart,
+  IoMdTv,
+  IoMdVideocam,
 } from "react-icons/io";
+import { MdFavoriteBorder } from "react-icons/md";
+import { FaMoneyCheck } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import "./Header.css";
 
@@ -34,43 +35,39 @@ const Header = () => {
       <nav>
         <ul className={active ? "ul-item" : "ul-item oicon"}>
           <li>
-            <IoMdImage className="icon" />
-            <Link to="/">Alumni</Link>
-          </li>
-
-          <li>
-            <IoMdBookmark className="icon" />
-            <Link to="/">History</Link>
-          </li>
-
-          <li>
-            <IoMdPerson className="icon" />
-            <Link to="/">Testimonials</Link>
-          </li>
-
-          <li>
             <IoMdHome className="icon" />
-            <Link to="/">Partners</Link>
+            <Link to="/">Home</Link>
+          </li>
+          <li>
+            <IoMdTv className="icon" />
+            <Link to="/fantasy">Fantasy</Link>
+          </li>
+          <li>
+            <IoMdTv className="icon" />
+
+            <Link to="/action">Comedy</Link>
+          </li>
+          <li>
+            <IoMdTv className="icon" />
+
+            <Link to="/action">Action</Link>
+          </li>
+          <li>
+            <IoMdImage className="icon" />
+            <Link to="/add">add</Link>
+          </li>
+          <li>
+            <MdFavoriteBorder className="icon" />
+            <Link to="/favorites">Favorites</Link>
           </li>
 
           <li>
-            <IoMdChatboxes className="icon" />
-            <Link to="/">About</Link>
+            <IoMdCart className="icon" />
+            <Link to="/cart">cart</Link>
           </li>
-
           <li>
-            <IoMdHammer className="icon" />
-            <Link to="/">Tutorials</Link>
-          </li>
-
-          <li>
-            <IoMdCall className="icon" />
-            <Link to="/">Contact</Link>
-          </li>
-
-          <li>
-            <IoMdClipboard className="icon" />
-            <Link to="/">FAQ</Link>
+            <FaMoneyCheck className="icon" />
+            <Link to="/orders">Orders</Link>
           </li>
         </ul>
       </nav>

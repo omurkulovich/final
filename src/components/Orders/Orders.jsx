@@ -11,6 +11,7 @@ import { useState } from "react";
 import "react-credit-cards/es/styles-compiled.css";
 import "../Orders/Orders.css";
 import OrdersModal from "./OrdersModal";
+import "react-credit-cards/es/styles-compiled.css";
 
 const Orders = () => {
   const [isModalVisible, setIsModalVisible] = useState(false);
