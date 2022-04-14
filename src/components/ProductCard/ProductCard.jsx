@@ -1,7 +1,8 @@
-import { ShoppingOutlined } from "@ant-design/icons";
+import { ShoppingOutlined, HeartOutlined } from "@ant-design/icons";
 import { Card } from "antd";
 import React, { useContext, useState } from "react";
 import { cartContext } from "../../context/cartContext";
+import { favoritesContext } from "../../context/favoritesContext";
 const { Meta } = Card;
 
 const contentStyle = {
@@ -15,6 +16,9 @@ const contentStyle = {
 const ProductCard = ({ item }) => {
   const { addProductToCart, checkItemInCart } = useContext(cartContext);
   const [checkItem, setCheckItem] = useState(checkItemInCart(item.id));
+  const { addProductToFavorite, checkItemInFavorite } =
+    useContext(favoritesContext);
+  const [checkItem2, setCheckItem2] = useState(checkItemInFavorite(item.id));
   return (
     <Card
       hoverable
@@ -38,6 +42,17 @@ const ProductCard = ({ item }) => {
           </>
         }
       />
+      <HeartOutlined
+        onClick={() => {
+          addProductToFavorite(item);
+          setCheckItem2(checkItemInFavorite(item.id));
+        }}
+        style={{
+          margin: "10px",
+          fontSize: "25px",
+          color: checkItem2 ? "black" : "grey",
+        }}
+      />
       <ShoppingOutlined
         onClick={() => {
           addProductToCart(item);
@@ -46,7 +61,7 @@ const ProductCard = ({ item }) => {
         style={{
           margin: "10px",
           fontSize: "25px",
-          color: checkItem ? "red" : "black",
+          color: checkItem ? "black" : "grey",
         }}
       />
     </Card>

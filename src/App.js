@@ -3,14 +3,17 @@ import MovieContextProvider from "./context/contextsMovie";
 import Routing from "./Routing";
 import "antd/dist/antd.css";
 import CartContextProvider from "./context/cartContext";
+import FavoriteContextProvider from "./context/favoritesContext";
 
 function App() {
   return (
     <>
       <MovieContextProvider>
-        <CartContextProvider>
-          <Routing />
-        </CartContextProvider>
+        <FavoriteContextProvider>
+          <CartContextProvider>
+            <Routing />
+          </CartContextProvider>
+        </FavoriteContextProvider>
       </MovieContextProvider>
     </>
   );
