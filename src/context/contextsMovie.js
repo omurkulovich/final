@@ -65,7 +65,11 @@ const MovieContextProvider = ({ children }) => {
     <contextsMovie.Provider
       value={{
         movies: state.movies,
+
+        oneMOvie: state.oneMovie,
+
         oneMovie: state.oneMovie,
+
         getMovie,
         getOneMovie,
         upDataMovie,
