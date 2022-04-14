@@ -1,13 +1,11 @@
-.products-ch {
-  width: 400px;
-  margin: 5px;
-  border: none;
+.desc-t {
+  bottom: 0;
 }
-
-.img-prod {
+.card-tt {
+  width: 320px;
+  height: 600px;
+}
+.img-ch {
   width: 100%;
-  /* height: 540px; */
-  color: #fff;
-  text-align: center;
-  background: #364d79;
+  height: 100%;
 }

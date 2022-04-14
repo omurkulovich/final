@@ -4,6 +4,7 @@ import Action from "./components/Action/Action";
 import Add from "./components/Add/Add";
 import AddList from "./components/AddList/AddList";
 import Comedy from "./components/Comedy/Comedy";
+import Edit from "./components/Edit/Edit";
 import Fantasy from "./components/Fantasy/Fantasy";
 import Header from "./components/Header/Header";
 import HomePage from "./components/HomePage/HomePage";
@@ -38,13 +39,16 @@ const Routing = () => {
       link: "/addcard",
       element: <AddList />,
     },
+    {
+      link: "/edit/:id",
+      element: <Edit />,
+    },
   ];
 
   return (
     <div>
       <BrowserRouter>
         <Header />
-        <HomePage />
         <Routes>
           {PUBLIC_ROUTES.map((item) => (
             <Route key={item.id} path={item.link} element={item.element} />

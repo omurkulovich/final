@@ -11,6 +11,7 @@ import {
   IoMdMenu,
   IoMdPerson,
 } from "react-icons/io";
+import { MdFavoriteBorder } from "react-icons/md";
 import { Link } from "react-router-dom";
 import "./Header.css";
 
@@ -34,43 +35,29 @@ const Header = () => {
       <nav>
         <ul className={active ? "ul-item" : "ul-item oicon"}>
           <li>
-            <IoMdImage className="icon" />
-            <Link to="/">Alumni</Link>
+            <IoMdHome className="icon" />
+            <Link to="/">Home</Link>
           </li>
-
           <li>
-            <IoMdBookmark className="icon" />
-            <Link to="/">History</Link>
+            <IoMdImage className="icon" />
+            <Link to="/add">add</Link>
           </li>
-
+          <li>
+            <MdFavoriteBorder className="icon" />
+            <Link to="/edit">likes</Link>
+          </li>
           <li>
             <IoMdPerson className="icon" />
-            <Link to="/">Testimonials</Link>
-          </li>
 
-          <li>
-            <IoMdHome className="icon" />
-            <Link to="/">Partners</Link>
-          </li>
-
+            <Link to="/action">action</Link>
+          </li>{" "}
           <li>
             <IoMdChatboxes className="icon" />
-            <Link to="/">About</Link>
+            <Link to="/fantasy">Fantasy</Link>
           </li>
-
-          <li>
-            <IoMdHammer className="icon" />
-            <Link to="/">Tutorials</Link>
-          </li>
-
           <li>
             <IoMdCall className="icon" />
-            <Link to="/">Contact</Link>
-          </li>
-
-          <li>
-            <IoMdClipboard className="icon" />
-            <Link to="/">FAQ</Link>
+            <Link to="/">cart</Link>
           </li>
         </ul>
       </nav>
