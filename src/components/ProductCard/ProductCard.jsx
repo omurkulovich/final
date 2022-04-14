@@ -47,6 +47,19 @@ const ProductCard = ({ item }) => {
           </div>
         }
       />
+      <Meta
+        style={{ textAlign: "center", color: "rgb(221, 212, 212);" }}
+        title={
+          <>
+            <h4>{item.name}</h4>
+          </>
+        }
+        description={
+          <>
+            <h3>{"$" + item.price}</h3>
+          </>
+        }
+      />
       <HeartOutlined
         onClick={() => {
           addProductToFavorite(item);
