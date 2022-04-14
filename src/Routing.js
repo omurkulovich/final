@@ -9,6 +9,7 @@ import Fantasy from "./components/Fantasy/Fantasy";
 import Header from "./components/Header/Header";
 import HomePage from "./components/HomePage/HomePage";
 import MainPage from "./components/MainPage/MainPage";
+import Footer from "./components/Footer/Footer";
 
 const Routing = () => {
   let PUBLIC_ROUTES = [
@@ -53,12 +54,14 @@ const Routing = () => {
     <div>
       <BrowserRouter>
         <Header />
+
         <HomePage />
         <Routes>
           {PUBLIC_ROUTES.map((item) => (
             <Route key={item.id} path={item.link} element={item.element} />
           ))}
         </Routes>
+        <Footer />
       </BrowserRouter>
     </div>
   );
