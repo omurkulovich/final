@@ -1,6 +1,6 @@
 import React, { useContext, useEffect } from "react";
 import { contextsMovie } from "../../context/contextsMovie";
-import AddCard from "./AddCard";
+import ProductCard from "../ProductCard/ProductCard";
 import "./AddList.css";
 
 const AddList = () => {
@@ -11,7 +11,7 @@ const AddList = () => {
   return (
     <div className="add-card-t">
       {movie.map((item) => (
-        <AddCard key={item.id} item={item} />
+        <ProductCard key={item.id} item={item} />
       ))}
     </div>
   );

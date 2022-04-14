@@ -22,10 +22,13 @@ import king from "../MainPage/assets/king.jpeg";
 import halloween from "../MainPage/assets/halloween.jpeg";
 import shrek from "../MainPage/assets/shrek.jpeg";
 import { Link } from "react-router-dom";
+import HomePage from "../HomePage/HomePage";
 
 const MainPage = () => {
   return (
     <div className="wrapper">
+      <HomePage />
+
       <div className="container-ch">
         <div>
           <h1>Explore Collections</h1>

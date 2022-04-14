@@ -1,7 +1,7 @@
 import { Button, InputNumber, List } from "antd";
 import React, { useContext, useEffect } from "react";
 
-import { favoritesContext } from "../../contexts/favoritesContext";
+import { favoritesContext } from "../../context/favoritesContext";
 
 const Favorites = () => {
   const { getFavorite, favorite, deleteFromFavorite, changeProductCountFav } =

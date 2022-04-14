@@ -5,11 +5,13 @@ import Action from "./components/Action/Action";
 import Add from "./components/Add/Add";
 import AddList from "./components/AddList/AddList";
 import Comedy from "./components/Comedy/Comedy";
+import Edit from "./components/Edit/Edit";
 import Fantasy from "./components/Fantasy/Fantasy";
 import Header from "./components/Header/Header";
-import HomePage from "./components/HomePage/HomePage";
 import MainPage from "./components/MainPage/MainPage";
 import Footer from "./components/Footer/Footer";
+import Favorites from "./components/Favorites/Favorites";
+import Orders from "./components/Orders/Orders";
 
 const Routing = () => {
   let PUBLIC_ROUTES = [
@@ -48,14 +50,27 @@ const Routing = () => {
       element: <Cart />,
       id: 7,
     },
+    {
+      link: "/edit/:id",
+      element: <Edit />,
+      id: 8,
+    },
+    {
+      link: "/favorites",
+      element: <Favorites />,
+      id: 9,
+    },
+    {
+      link: "/orders",
+      element: <Orders />,
+      id: 10,
+    },
   ];
 
   return (
     <div>
       <BrowserRouter>
         <Header />
-
-        <HomePage />
         <Routes>
           {PUBLIC_ROUTES.map((item) => (
             <Route key={item.id} path={item.link} element={item.element} />
