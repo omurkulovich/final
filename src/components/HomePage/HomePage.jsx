@@ -1,9 +1,10 @@
 import React from "react";
 import Carusel from "../../carusel/Carusel";
+import "./HomePage.css";
 
 const HomePage = () => {
   return (
-    <div style={{ width: "100%", height: "100vh" }}>
+    <div className="caruselka-t">
       <div>
         <img
           style={{ width: "200px", margin: "30px" }}
@@ -11,7 +12,9 @@ const HomePage = () => {
           alt=""
         />
       </div>
-      <Carusel />
+      <div className="history-hbo">
+        <Carusel />
+      </div>
     </div>
   );
 };

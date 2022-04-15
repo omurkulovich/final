@@ -1,87 +1,45 @@
 import React, { useContext, useEffect } from "react";
 import { cartContext } from "../context/cartContext";
-import { Button, InputNumber, List } from "antd";
+import { Button, List } from "antd";
+import "./Cart.css";
 
 const Cart = () => {
-  const { getCart, cart, deleteFromCart, changeProductCount } =
-    useContext(cartContext);
+  const { getCart, cart, deleteFromCart } = useContext(cartContext);
 
   useEffect(() => {
     getCart();
   }, []);
   console.log(cart);
   return (
-    <div className="container-ch" style={{ width: "90%", marginLeft: "5%" }}>
-      <List
-        itemLayout="horizontal"
-        dataSource={cart.movies}
-        footer={<h2>Total: {cart.totalPrice}$</h2>}
-        renderItem={(item) => (
-          <List.Item
-            extra={<img src={item.item.image1} alt="img" width={272} />}
-          >
-            <List.Item.Meta
-              title={
-                <div
-                  style={{
-                    display: "flex",
-                    justifyContent: "space-between",
-                    alignItems: "center",
-                  }}
-                >
-                  <div style={{ display: "flex", flexDirection: "column" }}>
-                    <h4>{item.item.name}</h4>
-                  </div>
-                  <h3>{"$" + item.item.price}</h3>
-                </div>
-              }
-              description={
-                <>
-                  <div style={{ display: "flex", flexDirection: "column" }}>
-                    {item.item.description}
-                  </div>
-                  <div
-                    style={{
-                      display: "flex",
-                      justifyContent: "space-between",
-                      width: "40%",
-                      marginTop: "20px",
-                    }}
-                  >
-                    <div>
-                      <h4>Quantity</h4>
+    <div id="container-t">
+      <div style={{ width: "300px" }}>
+        <List
+          className="container-t-t"
+          itemLayout="horizontal"
+          dataSource={cart.movies}
+          renderItem={(item) => (
+            <List.Item
+              extra={<img src={item.item.image1} alt="img" width={272} />}
+            >
+              <List.Item.Meta
+                description={
+                  <>
+                    <div className="btn-cart">
                       <Button
-                        onClick={() =>
-                          changeProductCount(item.count - 1, item.item.id)
-                        }
+                        className="btn-t-a"
+                        onClick={() => deleteFromCart(item.item.id)}
                       >
-                        -
+                        Del movie
                       </Button>
-                      <InputNumber disabled value={item.count} />
-                      <Button
-                        onClick={() =>
-                          changeProductCount(item.count + 1, item.item.id)
-                        }
-                      >
-                        +
-                      </Button>
+                      <Button className="btn-t-a">Buy</Button>
                     </div>
-
-                    <div>
-                      <h4>SubPrice</h4>
-                      <h3>{"$" + item.subPrice}</h3>
-                    </div>
-                  </div>
-                  <Button onClick={() => deleteFromCart(item.item.id)}>
-                    Delete from cart
-                  </Button>
-                </>
-              }
-            />
-          </List.Item>
-        )}
-      />
-      ,
+                  </>
+                }
+              />
+            </List.Item>
+          )}
+        />
+      </div>
     </div>
   );
 };

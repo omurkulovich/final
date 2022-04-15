@@ -55,11 +55,6 @@ const ProductCard = ({ item }) => {
             <h4>{item.name}</h4>
           </>
         }
-        description={
-          <>
-            <h3>{"$" + item.price}</h3>
-          </>
-        }
       />
       <HeartOutlined
         onClick={() => {
@@ -87,6 +82,7 @@ const ProductCard = ({ item }) => {
         <Link to={`/edit/${item.id}`}>
           <button>Edit</button>
         </Link>
+        <button>mov</button>
         <button onClick={() => deleteMovie(item.id)}>Delete</button>
       </div>
       <Card />

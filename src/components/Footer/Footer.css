@@ -1,9 +1,15 @@
+.footer-wrapper {
+  bottom: 0;
+  width: 100%;
+  margin-top: 40px;
+}
+
 .footer-icons {
-  top: 15%;
+  bottom: 10%;
   border-radius: 15px 0 0 15px;
-  background: linear-gradient(45deg, blue, pink);
-  height: 300px;
-  width: 55px;
+  background: rgb(54, 45, 45);
+  height: 200px;
+  width: 50px;
   font-size: 30px;
   display: flex;
   flex-direction: column;
@@ -19,6 +25,7 @@
 .footer-icons a:hover {
   cursor: pointer;
   font-size: 35px;
+  color: red;
 }
 
 .footer-second {

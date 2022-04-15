@@ -12,6 +12,7 @@ import MainPage from "./components/MainPage/MainPage";
 import Footer from "./components/Footer/Footer";
 import Favorites from "./components/Favorites/Favorites";
 import Orders from "./components/Orders/Orders";
+import Navbar from "./components/Navbar/Navbar";
 
 const Routing = () => {
   let PUBLIC_ROUTES = [
@@ -70,7 +71,8 @@ const Routing = () => {
   return (
     <div>
       <BrowserRouter>
-        <Header />
+        <Navbar />
+        {/* <Header /> */}
         <Routes>
           {PUBLIC_ROUTES.map((item) => (
             <Route key={item.id} path={item.link} element={item.element} />
