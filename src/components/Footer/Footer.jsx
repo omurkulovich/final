@@ -11,7 +11,7 @@ import "./Footer.css";
 
 const Footer = () => {
   return (
-    <div>
+    <div className="footer-wrapper">
       <div className="footer-icons">
         <a href="https://twitter.com/hbomax?lang=en" target="_blank">
           <TwitterOutlined classname="icons-a" />

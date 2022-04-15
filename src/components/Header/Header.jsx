@@ -13,7 +13,6 @@ import {
 import { MdFavoriteBorder } from "react-icons/md";
 import { FaMoneyCheck } from "react-icons/fa";
 import { Link } from "react-router-dom";
-import "./Header.css";
 
 const Header = () => {
   const [active, setActive] = useState(false);

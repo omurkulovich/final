@@ -1,6 +1,6 @@
 import { Button, InputNumber, List } from "antd";
 import React, { useContext, useEffect } from "react";
-
+import "./Favorites.css";
 import { favoritesContext } from "../../context/favoritesContext";
 
 const Favorites = () => {
@@ -16,10 +16,9 @@ const Favorites = () => {
     <div
       className="container"
       style={{
-        width: "80%",
+        width: "300px",
         display: "flex",
-        justifyContent: "center",
-        flexDirection: "column-reverse",
+        padding: "20px",
       }}
     >
       <List
@@ -30,31 +29,15 @@ const Favorites = () => {
             extra={<img src={item.item.image1} alt="img" width={272} />}
           >
             <List.Item.Meta
-              title={
-                <div
-                  style={{
-                    display: "flex",
-                    justifyContent: "space-around",
-                    marginTop: "10px",
-                    flexDirection: "column",
-                    alignItems: "center",
-                  }}
-                >
-                  <div>
-                    <h4>{item.item.name}</h4>
-                  </div>
-                  <h3>{"$" + item.item.price}</h3>
-                </div>
-              }
               description={
                 <>
                   {/* <div>{item.item.description}</div> */}
 
                   <Button
-                    style={{ marginTop: "50px" }}
+                    className="btn-x"
                     onClick={() => deleteFromFavorite(item.item.id)}
                   >
-                    Delete from favorite
+                    X
                   </Button>
                 </>
               }
